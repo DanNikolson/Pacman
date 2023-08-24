@@ -1,23 +1,44 @@
-body{
+body {
     display: flex;
 }
 
-.Wall{
+.Wall {
     display: block;
     background-image: url(./Assets/Wall.png);
     width: 16px;
     height: 16px;
 }
-.Cell{
+.Cell {
     display: block;
     background-image: url(./Assets/Cell.png);
     width: 16px;
     height: 16px;
 }
 
-.Pacman{
+.Pacman1-0 {
     display: block;
-    background-image: url(./Assets/Pacman.png);
+    background-image: url(./Assets/PacmanRIGHT.png);
+    width: 16px;
+    height: 16px;
+}
+
+.Pacman-1-0 {
+    display: block;
+    background-image: url(./Assets/PacmanLEFT.png);
+    width: 16px;
+    height: 16px;
+}
+
+.Pacman0--1 {
+    display: block;
+    background-image: url(./Assets/PacmanUP.png);
+    width: 16px;
+    height: 16px;
+}
+
+.Pacman0-1 {
+    display: block;
+    background-image: url(./Assets/PacmanDOWN.png);
     width: 16px;
     height: 16px;
 }

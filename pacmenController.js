@@ -1,6 +1,7 @@
 window.addEventListener("load", () => {
     (function () {
         const mapSize = { x: 40, y: 40 };
+        let currentVector = { x: 1, y: 0 };
         let pacmenPosition = { x: 1, y: 1 };
         let oldCell = {
             tag: null,
@@ -58,7 +59,10 @@ window.addEventListener("load", () => {
 
             let cellTeg = document.getElementById(`${newVector.x}-${newVector.y}`);
 
-            if (cellTeg.className != "Wall") pacmenPosition = newVector;
+            if (cellTeg.className != "Wall") {
+                pacmenPosition = newVector;
+                currentVector = vector2;
+            }
         }
 
         function drawPacmen() {
@@ -67,7 +71,7 @@ window.addEventListener("load", () => {
             oldCell.tag = document.getElementById(`${pacmenPosition.x}-${pacmenPosition.y}`);
             oldCell.class = oldCell.tag.className;
 
-            oldCell.tag.className = "Pacman";
+            oldCell.tag.className = `Pacman${currentVector.x}-${currentVector.y}`;
         }
     })();
 });
