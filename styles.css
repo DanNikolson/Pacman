@@ -1,0 +1,23 @@
+body{
+    display: flex;
+}
+
+.Wall{
+    display: block;
+    background-image: url(./Assets/Wall.png);
+    width: 16px;
+    height: 16px;
+}
+.Cell{
+    display: block;
+    background-image: url(./Assets/Cell.png);
+    width: 16px;
+    height: 16px;
+}
+
+.Pacman{
+    display: block;
+    background-image: url(./Assets/Pacman.png);
+    width: 16px;
+    height: 16px;
+}

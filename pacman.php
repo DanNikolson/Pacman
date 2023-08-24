@@ -1,15 +1,8 @@
 <?php
-namespace App\Command;
-
-use Symfony\Component\Console\Command\Command;
-use Symfony\Component\Console\Cursor;
-use Symfony\Component\Console\Input\InputInterface;
-use Symfony\Component\Console\Output\OutputInterface;
-use Symfony\Component\Console\vector2Int;
-
+require "vector2Int.php";
+require "cellconfig.php";
 class Programm
 {
-
     private $pacmanPosition;
     private $path = 'map.txt';
 
@@ -31,16 +24,6 @@ class Programm
         return $this->reverseMap($map);
     }
 
-    public function execute(InputInterface $input, OutputInterface $output)
-    {
-
-        $cursor = new Cursor($output);
-
-        $cursor->moveToPosition(7, 11);
-
-        $output->write('My text');
-    }
-
     private function reverseMap($map)
     {
         $mapReverse = [];
@@ -51,8 +34,6 @@ class Programm
                 $mapReverse[$x][$y] = $map[$y][$x];
             }
         }
-        print_r($mapReverse);
-        $this->clearConsole();
         return $mapReverse;
     }
 
@@ -70,16 +51,19 @@ class Programm
         return $maxLength;
     }
 
-    private function clearConsole()
+    public function drawMap($currentMap,$cell)
     {
-        define("CLEAR_KEY", "\e[H\e[J");
-        echo CLEAR_KEY;
-    }
-
-    private function drawPacman()
-    {
-        
+        for ($x=0; $x < count($currentMap); $x++) { 
+            echo '<div>';
+            for ($y=0; $y < count($currentMap[0]); $y++) { 
+                $classKey = $cell[$currentMap[$x][$y]];
+                $positionKey = $x.'-'.$y;
+                echo '<span class="'.$classKey.'" id="'.$positionKey.'"></span>';
+            }   
+            echo '</div>';
+        }
     }
 }
 $programm = new Programm;
-$programm->readMap();
+$currentMap = $programm->readMap();
+$programm->drawMap($currentMap,$cell);
