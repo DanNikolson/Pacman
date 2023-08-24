@@ -63,6 +63,11 @@ class Programm
             echo '</div>';
         }
     }
+
+    public function drawPlayer()
+    {
+        
+    }
 }
 $programm = new Programm;
 $currentMap = $programm->readMap();
