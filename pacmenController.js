@@ -15,8 +15,11 @@ window.addEventListener("load", () => {
             (event) => {
                 const keyName = event.key;
                 const vector2 = getVector(keyName);
-                updatePacmenPosition(vector2);
-                drawPacmen();
+                
+                if (vector2.x != 0 || vector2.y != 0) {
+                    updatePacmenPosition(vector2);
+                    drawPacmen();
+                };
             },
             false,
         );
