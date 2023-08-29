@@ -1,7 +1,9 @@
 
-window.addEventListener("load", pacmenController);
+window.addEventListener("load", () => {
+    pacmenController();
+});
 var pacmenController = () => {
-    const mapSize = { x: 40, y: 40 };
+    const mapSize = { x: 39, y: 40 };
     let currentVector = { x: 1, y: 0 };
     let pacmenPosition = { x: 1, y: 1 };
     let oldCell = {
@@ -12,7 +14,8 @@ var pacmenController = () => {
 
     allCells = getallCells();
     drawPacmen();
-    
+    print(allCells);
+
 
     document.addEventListener(
         "keydown",
@@ -87,16 +90,16 @@ var pacmenController = () => {
         for (let x = 0; x < mapSize.x; x++) {
             for (let y = 0; y < mapSize.y; y++) {
                 stringPosition = `${x}-${y}`;
-                allCells[stringPosition] = document.getElementById(stringPosition);
+                const tag = document.getElementById(stringPosition);
+                allCells[stringPosition] = tag.className;
             };
         };
         return allCells;
     }
 
-    // function a(allCells) {
-    //     // let allCellsArray = Object.entries(allCells);
-    //     console.log('ывфагнтпыгфавшпгфыгвпагшыаыафыавы');
-    // }
-    
+    function print(allCells) {
+        let allCellsArray = Object.entries(allCells);
+        console.log(allCellsArray);
+    }
 }
 
