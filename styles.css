@@ -1,0 +1,44 @@
+* {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+}
+
+.myCanvas {
+      background-color: black;
+}
+
+button {
+      top: 40%;
+      position: relative;
+      cursor: pointer;
+      border: none;
+      background: none;
+}
+
+.modal-window.hidden {
+      display: none;
+}
+
+.modal-window {
+      background-image: url(./Assets/MenuBG.png);
+      background-size: 100% 100%;
+      position: absolute;
+      display: flex;
+      justify-content: flex-start;
+      flex-direction: column;
+      align-items: center;
+      align-content: center;
+      width: 440px;
+      height: 520px;
+      top: 0;
+      background-color: silver;
+}
+
+.start-modal {
+      top: 1%;
+      right: 1%;
+      border-radius: 3px;
+      width: 236px;
+      height: 38px;
+}

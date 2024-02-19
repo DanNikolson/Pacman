@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="styles.css">
+      <title>Document</title>
+</head>
+
+<body>
+      <canvas class="myCanvas"></canvas>
+      <script src='./utils.js'></script>
+      <script src='./player.js'></script>
+      <script src='./config.js'></script>
+      <script src='./movement.js'></script>
+      <script src='./boundary.js'></script>
+      <script src='./index.js'></script>
+
+      <div class="modal-window">
+            <button class="start-modal"></button>
+      </div>
+      <div class="modal-window hidden">
+            <button class="win-modal">Закрыть</button>
+            <h1>Победное окно</h1>
+            <p>
+                  Вы победили
+            </p>
+      </div>
+      <div class="modal-window hidden">
+            <button class="lose-modal">Закрыть</button>
+            <h1>Проигравшее окно</h1>
+            <p>
+                  Вы проиграли
+            </p>
+      </div>
+      <script src='./modalWindow.js'></script>
+</body>
+
+</html>
