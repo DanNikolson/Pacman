@@ -38,3 +38,9 @@ const MAP = [
       [CELL_TYPES.pipeVertical, CELL_TYPES.empty, CELL_TYPES.empty, CELL_TYPES.empty, CELL_TYPES.empty, CELL_TYPES.empty, CELL_TYPES.empty, CELL_TYPES.empty, CELL_TYPES.empty, CELL_TYPES.empty, CELL_TYPES.pipeVertical],
       [CELL_TYPES.pipeCorner4, CELL_TYPES.pipeHorizontal, CELL_TYPES.pipeHorizontal, CELL_TYPES.pipeHorizontal, CELL_TYPES.pipeHorizontal, CELL_TYPES.pipeHorizontal, CELL_TYPES.pipeHorizontal, CELL_TYPES.pipeHorizontal, CELL_TYPES.pipeHorizontal, CELL_TYPES.pipeHorizontal, CELL_TYPES.pipeCorner3]
 ];
+
+
+const convertCellsToBool = MAP.map(elem => elem.map(elem => elem === CELL_TYPES.empty)); // true /false array
+
+let arrOfObj = [];
+convertCellsToBool.forEach((elem, x) => elem.forEach((elem, y) => convertCellsToBool[x][y] && arrOfObj.push({ x, y })))//coordinates

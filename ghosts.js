@@ -10,6 +10,10 @@ class Ghost {
         this.polygon = createPolygon(this.position.x, this.position.y, this.width, this.height);
     }
 
+    get getRandomEmptyCell() {
+        return array[Math.trunc(Math.random() * 72 + 1)];
+    }
+
     draw(context, img) {
         context.drawImage(
             img,
@@ -35,4 +39,3 @@ class Ghost {
 
     }
 }
-

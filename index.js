@@ -38,7 +38,7 @@ function createCell(x, y, imagePath) {
       if (imagePath) {
             const polygon = createPolygon(BOUNDARY.position.x, BOUNDARY.position.y, BOUNDARY.width, BOUNDARY.height);
             borders.push(polygon);
-      
+
             createImg(BOUNDARY, imagePath);
       }
 }
